@@ -1,0 +1,65 @@
+*{
+    margin: 0dp;
+    padding: 0dp;
+}
+.wrapper{
+    width: 100%;
+}
+.header{
+    width: 100%;
+    height: 50px;
+    background-color:grey;
+}
+.row{
+    width: 85%;
+    height: 100%;
+    background-color: black;
+    margin: auto;
+}
+.header .left{
+    width: 60%;
+    height: 100%;
+    float: left;
+    
+}
+.header .right{
+    width: 40%;
+    height: 100%;
+    float: left;
+}
+
+.header ul{
+    list-style-type: none;
+}
+.header ul li{
+    
+    display: inline-block;
+    color: white;
+      
+    font-size: 19px;
+}
+.header .right ul li{
+    padding-left: 25px;
+    
+    
+}
+.header ul li img{
+    width: 22px;   
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+.header .right ul li:hover {
+    background-color: red;
+}
+span{
+    position: relative;
+    bottom: 3px;
+}
+
+
+
+
+
