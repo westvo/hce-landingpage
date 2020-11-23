@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    overflow-y: hidden;
+}
+section  {
+    background-color: black;
+    background-image: url(mask.png), url(mask2.png);
+    width: 100%;
+    height: 100vh;
+    background-position-x: -190px;
+    background-position-y: -115px;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 115%;
+}
+.section4 #all {
+    width: 410px;
+    height: 100%;
+    background-color: initial;
+    margin-top: 120px;
+    margin-left: 140px;
+    float: left;
+}
+.section4 #p1, #p2, #p3, #p4 {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+.section4 #p1 {
+    font-size:  11px;
+    padding-top: 15px;
+}
+.section4 #p2 {
+    font-size: 37px;
+    margin-top: 17px;
+    text-align: justify;
+}
+.section4 #p3 {
+    margin-top: 20px;
+    width: 390px;
+    font-size:  12px;
+}
+.section4 #p4 {
+    font-size:  14px;
+    margin-top: 30px;
+    margin-bottom: 17px;
+    
+}
+.section4 #img {
+    margin-top: 25px;
+}
+.section4 #img1 {
+    width: 42px;
+    height: 26px;
+    background:rgba(0,0,0,0);
+    margin-bottom: -2px;
+}
+.section4 #img2 {
+    width: 57px;
+    height: 24px;
+    background:rgba(0,0,0,0);
+    margin-left: 17px;
+}
+.section4 #img3 {
+    width: 195px;
+    height: 25px;
+    
+    margin-left: 17px;
+    background:rgba(0,0,0,0);
+}
+.section4 #img4 {
+    width: 140px;
+    height: 19px;
+    background:rgba(0,0,0,0);
+    margin-top: 12px;
+}
+.section4 #img5 {
+    width: 55px;
+    height: 23px;
+    background:rgba(0,0,0,0);
+    margin-left: 17px;
+    margin-top: 12px;
+}
+.section4 #img6 {
+    width: 100px;
+    height: 40px;
+}
+.section4 #img7 {
+    width: 100px;
+    height: 40px;
+    
+}
+.section4 #img8 {
+    float: left;
+    width: 520px;
+    height: 450px;
+    margin-top: 110px;
+    margin-left: 240px;
+    display: block;  
+}
+.section4 #but1, #but2 {
+    border-radius: 7px;
+    width: 95px;
+    height: 40px;
+}
+
+.section4 #but1 {
+    background-image: url(getiton.png);
+    background-size: 95px;
+    background-repeat: no-repeat;
+}
+.section4 #but2 {
+    background-image: url(apple.png);
+    background-size: 95px;
+    background-repeat: no-repeat;
+    margin-left: 12px;
+}
