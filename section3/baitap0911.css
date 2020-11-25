@@ -1,0 +1,44 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    
+}
+#section3 #background{
+    z-index: -1;
+    position: absolute;
+    background-size: cover;
+}
+#section3 #hinh1{
+    position: absolute;
+    width: 180px;
+    bottom:-100px;
+    right: 110px;
+}
+#section3 #hinh2{
+    position: absolute;
+    top: 780px;
+    left: 230px;
+    z-index: 1;
+    width: 170px
+}
+#section3 #hinh3{
+    position: absolute;
+    width: 800px;
+    left: 280px;
+    top: 300px;
+    
+    
+}
+#section3 #hinh4{
+    position: absolute;
+    width: 180px;
+    top: 230px;
+    left: 120px;
+}
+#section3 #hinh5{
+   width: 1000px;
+   position: absolute;
+   top: 736px;
+   left: 74px;
+   
+}
