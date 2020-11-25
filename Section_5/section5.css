@@ -2,46 +2,46 @@
     display: block;
     margin: auto;
 }
-.main{
+.section5_main{
     display: flex;
     justify-content: center;
 }
 
-#a1 {
+#section5_a1 {
     text-align: center;
     font-family: 'Poppins', sans-serif;
     font-size: 17px;
     margin-bottom: 0px;
 
 }
-#a2 {
+#section5_a2 {
     text-align: center;
     font-family: 'Poppins', sans-serif;
     font-size: 37px;
     margin-top: 2px;
     margin-bottom: 2px;
 }
-#a3 {
+#section5_a3 {
     text-align: center;
     margin-top: 7px;
     font-family: 'Poppins', sans-serif;
     font-size: 16px;
     margin-bottom: 40px;
 }
-#anh1{
+#section5_anh1{
     width: 37.46px;
     height: 90.43px;
     margin-left: 30px;
     margin-bottom: -70px;
 }
-#sao1{
+#section5_sao1{
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
 
-.phan3, .phan2, .phan4{
+.section5_phan3, .section5_phan2, .section5_phan4{
     border: 2px solid;
     border: none;
     background-color: #FCFCFC;
@@ -52,7 +52,7 @@
 }
 
 
-#chu1 {
+#section5_chu1 {
     text-align: center;
     color: black;
     font-family: 'Oswald', sans-serif;
@@ -63,7 +63,7 @@
     margin-top: 1px;
     
 }
-#giatien{
+#section5_giatien{
     text-align: center;
     color: black;
     font-family: 'Oswald', sans-serif;
@@ -71,7 +71,7 @@
     margin-top: 10px;
     margin-bottom: -10px;
 }
-#month{
+#section5_month{
     font-family: 'Poppins', sans-serif;
     font-size: 18px;
     text-align: center;
@@ -95,7 +95,7 @@ li{
     line-height: 20px; 
 }
 
-#buy1 ,#buy2, #buy3{
+#section5_buy1 ,#section5_buy2, #section5_buy3{
     border: 2px solid white;
     border-radius: 50px;
     display: block;
@@ -109,39 +109,39 @@ li{
     font-weight: bold; 
     background-color:  #FF1E1E ;
 }
-#buy2{
+#section5_buy2{
     margin-top: 52px;
 }
 
 /* ----------------HOVER------------------- */
-.phan3:active , .phan3:hover,
-.phan2:active , .phan2:hover,
-.phan4:active , .phan4:hover
+.section5_phan3:active , .section5_phan3:hover,
+.section5_phan2:active , .section5_phan2:hover,
+.section5_phan4:active , .section5_phan4:hover
 {
     transform: scale(1.1);
     background-color: #FF1E1E;
 }
 
-.phan3:hover #chu1, .phan3:hover #giatien, .phan3:hover #month ,.phan3:hover li{
+.section5_phan3:hover #section5_chu1, .section5_phan3:hover #section5_giatien, .section5_phan3:hover #section5_month ,.section5_phan3:hover li{
     color: white;
 }
 
-.phan3:hover ul, .phan2:hover ul, .phan4:hover ul{
+.section5_phan3:hover ul, .section5_phan2:hover ul, .section5_phan4:hover ul{
     list-style-image: url('yes_white.png');
 }
-.phan3:hover #sao1, .phan2:hover #sao1, .phan4:hover #sao1 {
+.section5_phan3:hover #section5_sao1, .section5_phan2:hover #section5_sao1, .section5_phan4:hover #section5_sao1 {
     content: url('anh2.png');
     /* thay đổi thành ảnh khác khi hover vào */
 }
 
-.phan2:hover #chu1, .phan2:hover #giatien, .phan2:hover #month ,.phan2:hover li{
+.section5_phan2:hover #section5_chu1, .section5_phan2:hover #section5_giatien, .section5_phan2:hover #section5_month ,.section5_phan2:hover li{
     color: white;
 }
-.phan4:hover #chu1, .phan4:hover #giatien, .phan4:hover #month ,.phan4:hover li{
+.section5_phan4:hover #section5_chu1, .section5_phan4:hover #section5_giatien, .section5_phan4:hover #section5_month ,.section5_phan4:hover li{
     color: white;
 }
 
-.phan3, .phan2, .phan4 {
+.section5_phan3, .section5_phan2, .section5_phan4 {
     box-shadow: 0px 15px 20px gray;
     /* đổ bóng */
 }
