@@ -1,0 +1,64 @@
+.section2
+{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.section2-wrapper
+{
+    width: 80%;
+    min-height: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
+    margin-bottom: 100px;
+}
+.section2-text
+{
+    width: 100%;
+    height: 170px;
+
+}
+.section2-p1
+{
+    font-size: 12px;
+    margin-bottom: 12px;
+    font-weight: 600;
+    opacity: 50%;
+    font-family: 'Poppins', sans-serif;
+}
+.section2-p2,.section2-p3
+{
+    font-size: 33px;
+    margin-top: 8px;
+    margin-bottom: 0;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    opacity: 90%;
+}
+.section2-line1,.section2-line2
+{
+    width: 100%;
+    height: auto;
+    margin-bottom: 16px;
+}
+.section2-img1
+{
+    width: 66%;
+}
+.section2-img2
+{
+    width: 32%;
+    float:right;
+}
+.section2-img3
+{
+    width:32% ;
+}
+.section2-img4
+{
+    width:66%;
+    float:right;
+
+}
