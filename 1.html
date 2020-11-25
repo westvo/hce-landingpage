@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+<!-- jQuery and JS bundle w/ Popper.js -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+</head>
+<body>
+    <table class="table" id="adjustment">
+        <thead>
+          <tr>
+            
+          </tr>
+        </thead>
+        <tbody>
+        
+        </tbody>
+      </table>
+
+<!-- Button trigger modal -->
+<button type="button" id="create" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
+    Create
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button id="save" type="button" class="btn btn-primary" data-dismiss="modal">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+      
+    <script> 
+        var adjustmentModal =  {
+        "title": "Adjustment",
+        "type": "object",
+        "properties": {
+            "name": {
+            "type": "string"
+            },
+            "value": {
+            "type": "string"
+            }
+        }
+        }
+
+        var columns = Object.keys(adjustmentModal.properties);
+        columns.push("action");
+
+        var adjs = [
+            {
+                name: "name1",
+                value: "value1"
+            },
+            {
+                name: "name2",
+                value: "value2"
+            },
+            {
+                name: "name3",
+                value: "value3"
+            }
+        ];
+
+        function fakeObject() {
+            let rs = {};
+            for (let i = 0; i < columns.length - 1; i++) {
+                let columnName = columns[i];
+                rs.columnName = "";
+            }
+            return rs;
+        }
+
+        function generateColumn() {
+            let table = document.getElementById("adjustment");
+            let thead = table.children[0];
+            let tr = thead.children[0];
+            tr.innerHTML = '';
+            
+            let th = document.createElement('th');
+            
+            th.innerHTML = "#";
+            th.setAttribute("scope", "col");
+            tr.appendChild(th);
+
+            for (let i = 0; i < columns.length; i++) {
+                let th = document.createElement('th');
+                th.innerHTML = columns[i];
+                th.setAttribute("scope", "col");
+
+                tr.appendChild(th);
+            }
+        }
+
+        function generateRow() {
+            let table = document.getElementById("adjustment");
+            let tbody = table.children[1];
+            tbody.innerHTML = '';
+
+            for (let i = 0; i < adjs.length; i++ ) {
+                currentObject = adjs[i];
+                let tr = document.createElement('tr');
+                
+                let th = document.createElement('th');
+                th.setAttribute("scope", "row");
+                th.innerHTML = i + 1;
+                tr.appendChild(th);
+
+                for (let j = 0; j < columns.length - 1; j++) {
+                    let columnName = columns[j];
+                    let td = document.createElement('td');
+                    td.innerHTML = currentObject[columnName];
+                    tr.appendChild(td);
+                }
+
+                //tạo button
+                btnEdit = document.createElement('button');
+                btnEdit.className = "btn btn-primary";
+                btnEdit.setAttribute("data-toggle" , "modal");
+                btnEdit.setAttribute("data-target","#exampleModal");
+                btnEdit.addEventListener("click", loadData );
+                btnEdit.innerHTML = "Edit";
+
+                btnDel = document.createElement("button");
+                btnDel.innerHTML = "Delete";
+                btnDel.className = "btn btn-danger";
+                btnDel.addEventListener("click", deleteRow);
+                tr.appendChild(btnEdit);
+                tr.appendChild(btnDel);
+                
+                tbody.appendChild(tr);
+            }
+        }
+
+        function deleteRow() {
+            let parent = this.parentNode;
+            let id = parent.children[0].innerHTML -1;
+            adjs.splice(id, 1);
+
+            generateTable();
+
+        }
+
+        function loadData(){
+            let renderArea = document.querySelector(".modal-body");
+            renderArea.innerHTML = "";
+
+            let parent = this.parentNode;
+
+            let id = parent.children[0].innerHTML -1;
+
+            renderArea.setAttribute("id", id);
+
+            let currentObject = adjs[id];
+
+            for (let i = 0; i < columns.length - 1; i++) {
+                let columnName = columns[i];
+                
+                //label
+                label = document.createElement('label');
+                label.innerHTML = columnName;
+                label.setAttribute("for", columnName);
+                renderArea.appendChild(label);
+                //input field
+                input = document.createElement("input");
+                input.className = "form-control";
+                input.setAttribute("id", columnName);
+                input.value = currentObject[columnName];
+                renderArea.appendChild(input);
+            }
+
+            
+        }
+
+        function generateTable(){
+            generateColumn();
+            generateRow();
+        }
+        
+        
+
+        const create = document.querySelector("#create");
+        create.addEventListener('click', () => {
+            let renderArea = document.querySelector('.modal-body');
+            renderArea.innerHTML = '';
+            
+            renderArea.setAttribute("id", adjs.length);
+            
+            for (let i = 0; i < columns.length - 1; i++) {
+                let columnName = columns[i];
+                label = document.createElement('label');
+                label.innerHTML = columnName;
+                label.setAttribute("for", columnName);
+                renderArea.appendChild(label);
+
+                input = document.createElement('input');
+                input.className = "form-control";
+                input.setAttribute("id", columnName);
+                renderArea.appendChild(input);
+            }
+            generateTableO();
+        });
+
+        const save = document.querySelector("#save");
+        save.addEventListener('click', () => {
+            id = +document.querySelector(".modal-body").getAttribute("id");
+            if (id == adjs.length) adjs.push(new fakeObject());
+            let currentObject = adjs[id];
+            
+            for (let i = 0; i < columns.length -1; i++) {
+                let columnName = columns[i];
+                currentObject[columnName] = document.getElementById(columnName).value;
+                
+            }
+
+            generateTable();
+            
+        });
+        
+        generateTable();
+
+    </script>
+</body>
+</html>
