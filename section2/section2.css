@@ -5,7 +5,7 @@
     margin: 0;
     padding: 0;
 }
-.section2-main
+.section2-wrapper
 {
     width: 80%;
     min-height: 800px;
@@ -20,7 +20,7 @@
     height: 170px;
 
 }
-.p1
+.section2-p1
 {
     font-size: 12px;
     margin-bottom: 12px;
@@ -28,7 +28,7 @@
     opacity: 50%;
     font-family: 'Poppins', sans-serif;
 }
-.p2,.p3
+.section2-p2,.section2-p3
 {
     font-size: 33px;
     margin-top: 8px;
