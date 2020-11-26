@@ -15,11 +15,11 @@
     <table class="table" id="adjustment">
         <thead>
           <tr>
-            
+            <!--Generate Column-->
           </tr>
         </thead>
         <tbody>
-        
+            <!--Generate Rows-->
         </tbody>
       </table>
 
@@ -157,24 +157,18 @@
             adjs.splice(id, 1);
 
             generateTable();
-
         }
 
         function loadData(){
             let renderArea = document.querySelector(".modal-body");
             renderArea.innerHTML = "";
-
             let parent = this.parentNode;
-
             let id = parent.children[0].innerHTML -1;
-
             renderArea.setAttribute("id", id);
-
             let currentObject = adjs[id];
 
             for (let i = 0; i < columns.length - 1; i++) {
                 let columnName = columns[i];
-                
                 //label
                 label = document.createElement('label');
                 label.innerHTML = columnName;
@@ -187,22 +181,17 @@
                 input.value = currentObject[columnName];
                 renderArea.appendChild(input);
             }
-
-            
         }
 
         function generateTable(){
             generateColumn();
             generateRow();
         }
-        
-        
 
         const create = document.querySelector("#create");
         create.addEventListener('click', () => {
             let renderArea = document.querySelector('.modal-body');
             renderArea.innerHTML = '';
-            
             renderArea.setAttribute("id", adjs.length);
             
             for (let i = 0; i < columns.length - 1; i++) {
@@ -217,7 +206,6 @@
                 input.setAttribute("id", columnName);
                 renderArea.appendChild(input);
             }
-            generateTableO();
         });
 
         const save = document.querySelector("#save");
@@ -231,9 +219,7 @@
                 currentObject[columnName] = document.getElementById(columnName).value;
                 
             }
-
             generateTable();
-            
         });
         
         generateTable();
